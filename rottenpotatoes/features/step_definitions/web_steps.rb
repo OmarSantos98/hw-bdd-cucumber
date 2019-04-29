@@ -16,7 +16,7 @@
 # * http://benmabey.com/2008/05/19/imperative-vs-declarative-scenarios-in-user-stories.html
 # * http://dannorth.net/2011/01/31/whose-domain-is-it-anyway/
 # * http://elabs.se/blog/15-you-re-cuking-it-wrong
-#
+
 
 
 require 'uri'
@@ -49,6 +49,7 @@ When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
+
 When /^(?:|I )press "([^"]*)"$/ do |button|
   click_button(button)
 end
@@ -75,7 +76,7 @@ end
 #
 # TODO: Add support for checkbox, select or option
 # based on naming conventions.
-#
+
 When /^(?:|I )fill in the following:$/ do |fields|
   fields.rows_hash.each do |name, value|
     When %{I fill in "#{name}" with "#{value}"}
